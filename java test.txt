@@ -1,0 +1,186 @@
+1.Concept of method overloading
+
+class Resume
+{
+static void format()
+{
+System.out.println("running format in resume");
+}
+static void format(String type)
+{
+System.out.println("running format(string) in the resume");
+System.out.println("type:"+type);
+}
+static void format(String type,int pages)
+{
+System.out.println("running format(string,int) in the resume");
+System.out.println("type:"+type);
+System.out.println("no of pages:"+pages);
+}
+}
+
+class ResumeExecuter
+{
+public static void main(String[] args)
+{
+System.out.println("ResumeExecuter running in main method");
+Resume.format();
+Resume.format("skill based resume");
+Resume.format("functional based resume",3);
+}
+}
+
+2.different kind of variables
+
+local variable
+instance variable
+static variable
+parametre variable
+
+
+static String name;//static variable
+
+int age;//instance
+
+static void format(String type)//parameter
+{
+type="functional";//local
+}
+
+3.Heap and Stack memory
+
+Heap--> is a memory which consists of metaspace,constant pool,instance memory,
+if there is main method then the stack memory is generated.
+it stores all the information of the in the memory.
+
+Stack memory--> if there is main method then stack memory is generated.it is consists of stack frame.
+      stack memory is used to execute and store the name of the method .
+
+4. Constructor overloading
+
+class Company
+{
+
+String name;
+String location;
+
+Company(String name)
+{
+System.out.println("Invoking");
+System.out.println("Name:"+this.name);
+  
+}
+Company(String name, String loactaion)
+{
+System.out.println("Invoking");
+this.name=name;
+this.location=location;
+  
+
+}
+
+class companyRunner
+{
+public static void main(String[] args)
+{
+System.out.println("Invoking");
+
+Company company=new Company("hcl");
+Company company1=new Company("hcl","goa");
+}
+}
+
+
+5.Instance method overloading 
+
+class Park
+{
+String parkName;
+int noOfPeople;
+String games;
+
+public static void main(String[] args)
+{
+System.out.println("invoking park in the method");
+ String parkName="shalmala";
+System.out.println("park name is :"+parkName);
+int people=10;
+System.out.println("no of people is:"+noOfPeople);
+}
+}
+
+
+
+6. static variable and static method
+class Resume
+{
+
+static void format(String type)
+{
+System.out.println("running format(string) in the resume");
+System.out.println("type:"+type);
+}
+
+public static void main(String[] args)
+{
+System.out.println("running in main ");
+Resume.format("skill based");
+}
+}
+
+
+
+
+7.Constructor chaining using this keyword
+
+class Mall{
+String mallName;
+String mallLocation;
+
+Mall()
+{
+super();
+System.out.println("Invoking no-arg constructor of Mall");
+}
+Mall(String mallName){
+this();
+this.mallName=mallName;
+System.out.println("Invoking string constructor of Mall");	
+}
+
+class MallRunner{
+public static void main(String[] args)
+{
+Mall mall = new Mall("GT Mall");
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
